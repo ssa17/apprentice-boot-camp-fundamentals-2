@@ -9,23 +9,17 @@ public class Bowling {
         int currentBowl = 0;
 
         for(int frame = 0; frame < frames; frame++) {
-            int frameScore = bowls[currentBowl] + bowls[currentBowl+1];
-
-            sum += frameScore;
-
-            //incase of strike
             if(bowls[currentBowl] == 10) {
-                sum += bowls[currentBowl+2];
+                sum += bowls[currentBowl] + bowls[currentBowl+1] + bowls[currentBowl+2];
                 currentBowl++;
-                continue;
-            }
+            } else if((bowls[currentBowl] + bowls[currentBowl + 1]) == 10) {
+                sum += bowls[currentBowl] + bowls[currentBowl+1] + bowls[currentBowl+2];
+                currentBowl += 2;
+            } else {
+                sum += bowls[currentBowl] + bowls[currentBowl+1];
+                currentBowl += 2;
 
-            //incase of spare
-            if(frameScore == 10) {
-                sum += bowls[currentBowl+2];
             }
-
-            currentBowl+=2;
         }
 
         return sum;
