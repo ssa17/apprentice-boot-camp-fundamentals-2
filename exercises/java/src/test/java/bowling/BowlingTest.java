@@ -30,4 +30,13 @@ public class BowlingTest {
 
         assertThat(bowling.getGameScore(bowls)).isEqualTo(29);
     }
+
+    @Test
+    public void twentyBowls_withFirstFrameAsStrike() {
+        Bowling bowling = new Bowling();
+
+        int[] bowls = new int[]{10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+
+        assertThat(bowling.getGameScore(bowls)).isEqualTo(30);
+    }
 }

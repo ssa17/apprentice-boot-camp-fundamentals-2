@@ -13,6 +13,14 @@ public class Bowling {
 
             sum += frameScore;
 
+            //incase of strike
+            if(bowls[currentBowl] == 10) {
+                sum += bowls[currentBowl+2];
+                currentBowl++;
+                continue;
+            }
+
+            //incase of spare
             if(frameScore == 10) {
                 sum += bowls[currentBowl+2];
             }
