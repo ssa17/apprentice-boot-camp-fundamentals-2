@@ -22,12 +22,12 @@ public class BowlingTest {
         assertThat(bowling.getGameScore(bowls)).isEqualTo(20);
     }
 
-//    @Test
-//    public void twentyBowls_withFirstFrameAsSpare() {
-//        Bowling bowling = new Bowling();
-//
-//        int[] bowls = new int[]{1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-//
-//        assertThat(bowling.getGameScore(bowls)).isEqualTo(29);
-//    }
+    @Test
+    public void twentyBowls_withFirstFrameAsSpare() {
+        Bowling bowling = new Bowling();
+
+        int[] bowls = new int[]{1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+
+        assertThat(bowling.getGameScore(bowls)).isEqualTo(29);
+    }
 }
